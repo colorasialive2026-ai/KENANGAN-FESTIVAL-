@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 
 <meta charset="UTF-8">
@@ -75,10 +76,10 @@ background:#d9d9d9;
 width:40px;
 height:40px;
 border-radius:50%;
-margin:auto;
 display:flex;
 align-items:center;
 justify-content:center;
+margin:auto;
 background:#d8dce7;
 font-weight:bold;
 color:#666;
@@ -111,7 +112,6 @@ box-shadow:0 3px 10px rgba(0,0,0,.06);
 }
 
 .event{
-padding:0;
 background:#fff;
 overflow:hidden;
 }
@@ -119,12 +119,11 @@ overflow:hidden;
 .event img{
 width:100%;
 display:block;
-border-radius:18px;
 object-fit:cover;
 }
 
 .event-info{
-padding:18px;
+padding:20px;
 }
 
 .event-info h2{
@@ -133,9 +132,9 @@ margin-bottom:10px;
 }
 
 .event-info p{
-margin:4px 0;
-color:#555;
 font-size:14px;
+color:#666;
+margin:5px 0;
 }
 
 .section{
@@ -167,9 +166,9 @@ padding:15px;
 border:1px solid #d7dbe4;
 border-radius:14px;
 font-size:15px;
+background:#fff;
 outline:none;
 transition:.25s;
-background:#fff;
 }
 
 input:focus,
@@ -193,16 +192,18 @@ border-left:none;
 border-radius:0 14px 14px 0;
 }
 
-.ticket{
-padding:15px;
-background:#eef6ff;
+.ticket-holder{
+margin-top:18px;
+padding:18px;
+border:1px solid #e5e7eb;
 border-radius:14px;
-margin-bottom:18px;
+background:#fafafa;
 }
 
-.ticket h3{
-font-size:20px;
-margin-top:5px;
+.ticket-holder h4{
+font-size:16px;
+margin-bottom:15px;
+color:#222;
 }
 
 .summary{
@@ -212,31 +213,36 @@ padding:22px;
 .row{
 display:flex;
 justify-content:space-between;
+align-items:center;
 margin:12px 0;
 font-size:15px;
 }
 
 .total{
 font-size:22px;
-font-weight:700;
+font-weight:bold;
+}
+
+hr{
+border:none;
+border-top:1px solid #ececec;
+margin:18px 0;
 }
 
 .agreement{
+display:flex;
+gap:12px;
 margin-top:20px;
 padding:16px;
 background:#f8fbff;
-border:1px solid #dbeafe;
+border:1px solid #d9ecff;
 border-radius:14px;
-display:flex;
-align-items:flex-start;
-gap:12px;
 }
 
 .agreement input{
 width:20px;
 height:20px;
 margin-top:3px;
-flex-shrink:0;
 }
 
 .agreement p{
@@ -258,9 +264,9 @@ box-shadow:0 -5px 15px rgba(0,0,0,.08);
 .checkout{
 width:100%;
 height:56px;
-background:#08a4ff;
 border:none;
 border-radius:14px;
+background:#08a4ff;
 color:#fff;
 font-size:18px;
 font-weight:700;
@@ -268,65 +274,113 @@ cursor:pointer;
 transition:.25s;
 }
 
+.checkout:hover{
+background:#0b8be2;
+}
+
 .checkout:disabled{
-background:#cbd5e1;
+background:#cfd8e3;
 cursor:not-allowed;
 }
 
-.checkout:not(:disabled):hover{
-background:#0a8be0;
+.loading{
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(255,255,255,.92);
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:9999;
 }
 
-.ticket-holder{
+.spinner{
+width:55px;
+height:55px;
+border:5px solid #ddd;
+border-top:5px solid #08a4ff;
+border-radius:50%;
+animation:spin .8s linear infinite;
+}
+
+.loading p{
 margin-top:18px;
-padding:16px;
-border:1px solid #e5e7eb;
-border-radius:14px;
-background:#fafafa;
+font-weight:600;
+font-size:15px;
 }
 
-.ticket-holder h4{
-margin-bottom:15px;
-font-size:16px;
+@keyframes spin{
+
+0%{
+transform:rotate(0deg);
 }
 
-hr{
-border:none;
-border-top:1px solid #ececec;
-margin:18px 0;
+100%{
+transform:rotate(360deg);
+}
+
 }
 
 </style>
 
 </head>
+<body>
 
-  <body>
+<div class="loading" id="loading">
+
+<div class="spinner"></div>
+
+<p>Sedang memproses pesanan...</p>
+
+</div>
 
 <div class="container">
+
+<!-- =========================
+HEADER
+========================= -->
 
 <header>
 
 <div class="logo">
+
 <span>ETA</span><span>TIX</span>
+
 </div>
 
 </header>
 
+<!-- =========================
+STEP
+========================= -->
+
 <div class="stepper">
 
 <div class="step active">
+
 <div class="circle">1</div>
+
 <p>Pilih Tiket</p>
+
 </div>
 
 <div class="step active">
+
 <div class="circle">2</div>
+
 <p>Data Pemesan</p>
+
 </div>
 
 <div class="step">
+
 <div class="circle">3</div>
+
 <p>Pembayaran</p>
+
 </div>
 
 </div>
@@ -339,17 +393,36 @@ EVENT
 
 <div class="event">
 
-<img src="banner.png" alt="KENANGAN FESTIVAL 2026">
+<img
+src="banner.png"
+id="eventBanner"
+alt="Banner Event">
 
 <div class="event-info">
 
-<h2>KENANGAN FESTIVAL 2026</h2>
+<h2 id="eventName">
 
-<p>📅 Sabtu, 4 Juli 2026</p>
+KENANGAN FESTIVAL 2026
 
-<p>🕗 19.00 WIB</p>
+</h2>
 
-<p>📍 Indonesia</p>
+<p id="eventDate">
+
+📅 Sabtu, 4 Juli 2026
+
+</p>
+
+<p id="eventTime">
+
+🕗 19.00 WIB
+
+</p>
+
+<p id="eventLocation">
+
+📍 Indonesia
+
+</p>
 
 </div>
 
@@ -374,25 +447,31 @@ Data Pemesan
 <label>
 
 Nama Lengkap
+
 <span class="required">*</span>
 
 </label>
 
 <input
 type="text"
-id="buyerName"
+id="nama"
 placeholder="Masukkan nama lengkap">
 
 <label>
 
 Jenis Identitas
+
 <span class="required">*</span>
 
 </label>
 
-<select id="identityType">
+<select id="identitas">
 
-<option value="">Pilih Jenis Identitas</option>
+<option value="">
+
+Pilih Jenis Identitas
+
+</option>
 
 <option>KTP</option>
 
@@ -407,37 +486,40 @@ Jenis Identitas
 <label>
 
 Nomor Identitas
+
 <span class="required">*</span>
 
 </label>
 
 <input
 type="text"
-id="identityNumber"
+id="nomorId"
 placeholder="Masukkan nomor identitas">
 
 <label>
 
 E-mail
+
 <span class="required">*</span>
 
 </label>
 
 <input
 type="email"
-id="buyerEmail"
+id="email"
 placeholder="contoh@email.com">
 
 <label>
 
 Nomor WhatsApp
+
 <span class="required">*</span>
 
 </label>
 
 <div class="phone">
 
-<select id="buyerCode">
+<select id="kodeNegara">
 
 <option value="+62">+62</option>
 
@@ -451,7 +533,7 @@ Nomor WhatsApp
 
 <input
 type="tel"
-id="buyerPhone"
+id="wa"
 placeholder="81234567890">
 
 </div>
@@ -459,12 +541,13 @@ placeholder="81234567890">
 <label>
 
 Alamat Lengkap
+
 <span class="required">*</span>
 
 </label>
 
 <textarea
-id="buyerAddress"
+id="alamat"
 rows="4"
 placeholder="Masukkan alamat lengkap"></textarea>
 
@@ -486,13 +569,20 @@ Data Pemegang Tiket
 
 </div>
 
-<div id="ticketHolders">
+<div
+id="ticketHolders">
 
-<!-- JavaScript akan membuat
+<!--
+JavaScript akan membuat:
+
 Pemegang Tiket 2
+
 Pemegang Tiket 3
+
 Pemegang Tiket 4
-sesuai jumlah tiket -->
+
+dst sesuai jumlah tiket
+-->
 
 </div>
 
@@ -500,7 +590,7 @@ sesuai jumlah tiket -->
 
 </div>
 
-  <!-- =========================
+<!-- =========================
 RINGKASAN PESANAN
 ========================= -->
 
@@ -518,7 +608,11 @@ Ringkasan Pesanan
 
 <span>Nama Event</span>
 
-<strong>KENANGAN FESTIVAL 2026</strong>
+<strong id="summaryEvent">
+
+KENANGAN FESTIVAL 2026
+
+</strong>
 
 </div>
 
@@ -526,9 +620,31 @@ Ringkasan Pesanan
 
 <span>Total Tiket</span>
 
-<strong id="summaryQty">0</strong>
+<strong id="summaryQty">
+
+0
+
+</strong>
 
 </div>
+
+<hr>
+
+<div id="summaryItems">
+
+<!--
+JavaScript akan mengisi otomatis
+
+Contoh :
+
+Festival Reguler x2
+
+VIP x1
+-->
+
+</div>
+
+<hr>
 
 <div class="row">
 
@@ -541,16 +657,6 @@ Rp0
 </strong>
 
 </div>
-
-<hr>
-
-<div id="summaryItems">
-
-<!-- List tiket otomatis -->
-
-</div>
-
-<hr>
 
 <div class="row total">
 
@@ -568,11 +674,11 @@ Rp0
 
 <input
 type="checkbox"
-id="agree">
+id="setuju">
 
 <p>
 
-Saya menyatakan bahwa seluruh data yang saya isi adalah benar dan dapat dipertanggungjawabkan. Saya telah membaca, memahami, dan menyetujui seluruh syarat dan ketentuan pembelian tiket ETATIX serta bersedia mengikuti seluruh peraturan yang berlaku selama acara berlangsung.
+Saya menyatakan bahwa seluruh data yang saya isi adalah benar, lengkap, dan dapat dipertanggungjawabkan. Saya telah membaca, memahami, serta menyetujui seluruh syarat dan ketentuan pembelian tiket melalui ETATIX dan bersedia mengikuti seluruh peraturan yang ditetapkan oleh penyelenggara acara.
 
 </p>
 
@@ -635,51 +741,92 @@ Lanjut Pembayaran
 
 </div>
 
+</div>
+
+<!-- =========================
+LOADING
+========================= -->
+
+<div
+class="loading"
+id="loading">
+
+<div class="spinner"></div>
+
+<p>
+
+Mohon tunggu...
+Sedang memproses data pemesanan
+
+</p>
+
+</div>
+
 <script>
 
-function rupiah(n){
+/* ============================
+FORMAT RUPIAH
+============================ */
 
-return "Rp"+Number(n).toLocaleString("id-ID");
+function rupiah(angka){
+return "Rp " + Number(angka).toLocaleString("id-ID");
+}
+
+/* ============================
+AMBIL DATA DARI LOCAL STORAGE
+============================ */
+
+const cart = JSON.parse(
+localStorage.getItem("etatix_cart") ||
+'{"items":[],"totalQty":0,"totalPrice":0}'
+);
+
+/* ============================
+JIKA TIDAK ADA TIKET
+============================ */
+
+if(!cart.items || cart.items.length===0){
+
+alert("Tidak ada tiket yang dipilih.");
+
+window.location.href="tiket.html";
 
 }
 
-const cart=
-JSON.parse(
-localStorage.getItem("etatix_cart")
-||'{"items":[],"totalQty":0,"totalPrice":0}'
-);
+/* ============================
+RINGKASAN PESANAN
+============================ */
 
-document.getElementById("summaryQty").textContent=
+document.getElementById("summaryQty").textContent =
 cart.totalQty;
 
-document.getElementById("summarySubtotal").textContent=
+document.getElementById("summarySubtotal").textContent =
 rupiah(cart.totalPrice);
 
-document.getElementById("grandTotal").textContent=
+document.getElementById("grandTotal").textContent =
 rupiah(cart.totalPrice);
 
-document.getElementById("footerTotal").textContent=
+document.getElementById("footerTotal").textContent =
 rupiah(cart.totalPrice);
 
-const itemBox=
+const summaryItems =
 document.getElementById("summaryItems");
 
 cart.items.forEach(item=>{
 
-itemBox.innerHTML+=`
+summaryItems.innerHTML += `
 
 <div class="row">
 
 <span>
 
-${item.jenis}
-× ${item.jumlah}
+${item.jenis} × ${item.jumlah}
 
 </span>
 
 <strong>
 
-${rupiah(item.harga*item.jumlah)}
+${rupiah(item.harga * item.jumlah)}
 
 </strong>
 
@@ -689,14 +836,18 @@ ${rupiah(item.harga*item.jumlah)}
 
 });
 
-const holder=
+/* ============================
+DATA PEMEGANG TIKET
+============================ */
+
+const holderBox =
 document.getElementById("ticketHolders");
 
 if(cart.totalQty>1){
 
 for(let i=2;i<=cart.totalQty;i++){
 
-holder.innerHTML+=`
+holderBox.innerHTML += `
 
 <div class="ticket-holder">
 
@@ -715,8 +866,8 @@ Nama Lengkap
 
 <input
 type="text"
-name="holderName${i}"
-placeholder="Masukkan nama pemegang tiket">
+class="holderName"
+placeholder="Masukkan nama lengkap">
 
 <label>
 
@@ -725,23 +876,14 @@ Jenis Tiket
 
 </label>
 
-<select
-name="holderType${i}">
+<select class="holderType">
 
 <option value="">
-
 Pilih Jenis Tiket
-
 </option>
 
-${cart.items.map(t=>`
-
-<option>
-
-${t.jenis}
-
-</option>
-
+${cart.items.map(x=>`
+<option>${x.jenis}</option>
 `).join("")}
 
 </select>
@@ -754,13 +896,9 @@ ${t.jenis}
 
 }else{
 
-holder.innerHTML=`
+holderBox.innerHTML = `
 
-<div
-style="
-color:#666;
-font-size:14px;
-">
+<div style="color:#666;font-size:14px;">
 
 Pembeli merupakan pemegang tiket.
 
@@ -770,27 +908,227 @@ Pembeli merupakan pemegang tiket.
 
 }
 
-const agree=
-document.getElementById("agree");
+/* ============================
+CHECKBOX
+============================ */
 
-const btn=
+const agree =
+document.getElementById("setuju");
+
+const btn =
 document.getElementById("checkoutBtn");
 
 agree.addEventListener("change",function(){
 
-btn.disabled=!this.checked;
+btn.disabled = !this.checked;
 
 });
 
+/* ============================
+VALIDASI
+============================ */
+
+function validasi(){
+
+const wajib=[
+
+"nama",
+
+"identitas",
+
+"nomorId",
+
+"email",
+
+"wa",
+
+"alamat"
+
+];
+
+for(let id of wajib){
+
+const el=document.getElementById(id);
+
+if(!el.value.trim()){
+
+alert("Mohon lengkapi seluruh data.");
+
+el.focus();
+
+return false;
+
+}
+
+}
+
+const email =
+document.getElementById("email").value;
+
+const regex =
+/^\S+@\S+\.\S+$/;
+
+if(!regex.test(email)){
+
+alert("Format email tidak valid.");
+
+return false;
+
+}
+
+const wa =
+document.getElementById("wa").value;
+
+if(!/^08[0-9]{8,13}$/.test(wa)){
+
+alert("Nomor WhatsApp tidak valid.");
+
+return false;
+
+}
+
+const holderName =
+document.querySelectorAll(".holderName");
+
+const holderType =
+document.querySelectorAll(".holderType");
+
+for(let i=0;i<holderName.length;i++){
+
+if(holderName[i].value.trim()==""){
+
+alert("Lengkapi nama pemegang tiket.");
+
+holderName[i].focus();
+
+return false;
+
+}
+
+if(holderType[i].value==""){
+
+alert("Pilih jenis tiket.");
+
+holderType[i].focus();
+
+return false;
+
+}
+
+}
+
+if(!agree.checked){
+
+alert("Anda harus menyetujui syarat dan ketentuan.");
+
+return false;
+
+}
+
+return true;
+
+}
+
+/* ============================
+SIMPAN DATA
+============================ */
+
+function simpanData(){
+
+const holders=[];
+
+document.querySelectorAll(".ticket-holder")
+.forEach(card=>{
+
+const nama=
+card.querySelector(".holderName");
+
+const jenis=
+card.querySelector(".holderType");
+
+if(nama && jenis){
+
+holders.push({
+
+nama:nama.value,
+
+jenis:jenis.value
+
+});
+
+}
+
+});
+
+const order={
+
+nama:
+
+document.getElementById("nama").value,
+
+identitas:
+
+document.getElementById("identitas").value,
+
+nomorIdentitas:
+
+document.getElementById("nomorId").value,
+
+email:
+
+document.getElementById("email").value,
+
+kodeNegara:
+
+document.getElementById("kodeNegara").value,
+
+wa:
+
+document.getElementById("wa").value,
+
+alamat:
+
+document.getElementById("alamat").value,
+
+ticketHolder:
+
+holders,
+
+cart:cart
+
+};
+
+localStorage.setItem(
+
+"etatix_order",
+
+JSON.stringify(order)
+
+);
+
+}
+
+/* ============================
+CHECKOUT
+============================ */
+
 btn.addEventListener("click",function(){
 
+if(!validasi()) return;
+
+simpanData();
+
+document.getElementById("loading").style.display="flex";
+
+setTimeout(function(){
+
 window.location.href="qris.html";
+
+},1500);
 
 });
 
 </script>
 
-</div>
-
 </body>
-</html>
+</html>  
