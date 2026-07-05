@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ETATIX | Data Pemesanan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f4f7fb;
+color:#222;
+}
+
+.container{
+max-width:560px;
+margin:auto;
+padding-bottom:130px;
+}
+
+header{
+background:#fff;
+padding:20px;
+border-bottom:1px solid #ececec;
+}
+
+.logo{
+font-size:34px;
+font-weight:700;
+}
+
+.logo span:first-child{
+color:#08a4ff;
+}
+
+.logo span:last-child{
+color:#222;
+}
+
+.stepper{
+display:flex;
+justify-content:space-between;
+padding:25px 20px;
+background:#f4f7fb;
+}
+
+.step{
+flex:1;
+text-align:center;
+position:relative;
+}
+
+.step:not(:last-child)::after{
+content:"";
+position:absolute;
+top:20px;
+left:60%;
+width:80%;
+height:2px;
+background:#d9d9d9;
+}
+
+.circle{
+width:40px;
+height:40px;
+border-radius:50%;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#d8dce7;
+font-weight:bold;
+color:#666;
+position:relative;
+z-index:2;
+}
+
+.active .circle{
+background:#08a4ff;
+color:#fff;
+}
+
+.step p{
+margin-top:10px;
+font-size:13px;
+font-weight:600;
+color:#888;
+}
+
+.active p{
+color:#08a4ff;
+}
+
+.card{
+background:#fff;
+margin:18px;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 3px 10px rgba(0,0,0,.06);
+}
+
+.event{
+padding:0;
+background:#fff;
+overflow:hidden;
+}
+
+.event img{
+width:100%;
+display:block;
+border-radius:18px;
+object-fit:cover;
+}
+
+.event-info{
+padding:18px;
+}
+
+.event-info h2{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.event-info p{
+margin:4px 0;
+color:#555;
+font-size:14px;
+}
+
+.section{
+padding:22px;
+}
+
+.section-title{
+font-size:20px;
+font-weight:700;
+margin-bottom:20px;
+}
+
+label{
+display:block;
+margin-top:18px;
+margin-bottom:8px;
+font-weight:600;
+}
+
+.required{
+color:#ff2b55;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:15px;
+border:1px solid #d7dbe4;
+border-radius:14px;
+font-size:15px;
+outline:none;
+transition:.25s;
+background:#fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+border-color:#08a4ff;
+box-shadow:0 0 0 3px rgba(8,164,255,.12);
+}
+
+.phone{
+display:flex;
+}
+
+.phone select{
+width:95px;
+border-radius:14px 0 0 14px;
+}
+
+.phone input{
+border-left:none;
+border-radius:0 14px 14px 0;
+}
+
+.ticket{
+padding:15px;
+background:#eef6ff;
+border-radius:14px;
+margin-bottom:18px;
+}
+
+.ticket h3{
+font-size:20px;
+margin-top:5px;
+}
+
+.summary{
+padding:22px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+margin:12px 0;
+font-size:15px;
+}
+
+.total{
+font-size:22px;
+font-weight:700;
+}
+
+.agreement{
+margin-top:20px;
+padding:16px;
+background:#f8fbff;
+border:1px solid #dbeafe;
+border-radius:14px;
+display:flex;
+align-items:flex-start;
+gap:12px;
+}
+
+.agreement input{
+width:20px;
+height:20px;
+margin-top:3px;
+flex-shrink:0;
+}
+
+.agreement p{
+font-size:13px;
+line-height:1.7;
+color:#555;
+}
+
+.footer{
+position:fixed;
+left:0;
+right:0;
+bottom:0;
+background:#fff;
+padding:18px;
+box-shadow:0 -5px 15px rgba(0,0,0,.08);
+}
+
+.checkout{
+width:100%;
+height:56px;
+background:#08a4ff;
+border:none;
+border-radius:14px;
+color:#fff;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+transition:.25s;
+}
+
+.checkout:disabled{
+background:#cbd5e1;
+cursor:not-allowed;
+}
+
+.checkout:not(:disabled):hover{
+background:#0a8be0;
+}
+
+.ticket-holder{
+margin-top:18px;
+padding:16px;
+border:1px solid #e5e7eb;
+border-radius:14px;
+background:#fafafa;
+}
+
+.ticket-holder h4{
+margin-bottom:15px;
+font-size:16px;
+}
+
+hr{
+border:none;
+border-top:1px solid #ececec;
+margin:18px 0;
+}
+
+</style>
+
+</head>
+
+  <body>
+
+<div class="container">
+
+<header>
+
+<div class="logo">
+<span>ETA</span><span>TIX</span>
+</div>
+
+</header>
+
+<div class="stepper">
+
+<div class="step active">
+<div class="circle">1</div>
+<p>Pilih Tiket</p>
+</div>
+
+<div class="step active">
+<div class="circle">2</div>
+<p>Data Pemesan</p>
+</div>
+
+<div class="step">
+<div class="circle">3</div>
+<p>Pembayaran</p>
+</div>
+
+</div>
+
+<!-- =========================
+EVENT
+========================= -->
+
+<div class="card">
+
+<div class="event">
+
+<img src="banner.png" alt="KENANGAN FESTIVAL 2026">
+
+<div class="event-info">
+
+<h2>KENANGAN FESTIVAL 2026</h2>
+
+<p>📅 Sabtu, 4 Juli 2026</p>
+
+<p>🕗 19.00 WIB</p>
+
+<p>📍 Indonesia</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- =========================
+DATA PEMESAN
+========================= -->
+
+<div class="card">
+
+<div class="section">
+
+<div class="section-title">
+
+Data Pemesan
+
+</div>
+
+<label>
+
+Nama Lengkap
+<span class="required">*</span>
+
+</label>
+
+<input
+type="text"
+id="buyerName"
+placeholder="Masukkan nama lengkap">
+
+<label>
+
+Jenis Identitas
+<span class="required">*</span>
+
+</label>
+
+<select id="identityType">
+
+<option value="">Pilih Jenis Identitas</option>
+
+<option>KTP</option>
+
+<option>SIM</option>
+
+<option>Paspor</option>
+
+<option>Kartu Pelajar</option>
+
+</select>
+
+<label>
+
+Nomor Identitas
+<span class="required">*</span>
+
+</label>
+
+<input
+type="text"
+id="identityNumber"
+placeholder="Masukkan nomor identitas">
+
+<label>
+
+E-mail
+<span class="required">*</span>
+
+</label>
+
+<input
+type="email"
+id="buyerEmail"
+placeholder="contoh@email.com">
+
+<label>
+
+Nomor WhatsApp
+<span class="required">*</span>
+
+</label>
+
+<div class="phone">
+
+<select id="buyerCode">
+
+<option value="+62">+62</option>
+
+<option value="+60">+60</option>
+
+<option value="+65">+65</option>
+
+<option value="+66">+66</option>
+
+</select>
+
+<input
+type="tel"
+id="buyerPhone"
+placeholder="81234567890">
+
+</div>
+
+<label>
+
+Alamat Lengkap
+<span class="required">*</span>
+
+</label>
+
+<textarea
+id="buyerAddress"
+rows="4"
+placeholder="Masukkan alamat lengkap"></textarea>
+
+</div>
+
+</div>
+
+<!-- =========================
+DATA PEMEGANG TIKET
+========================= -->
+
+<div class="card">
+
+<div class="section">
+
+<div class="section-title">
+
+Data Pemegang Tiket
+
+</div>
+
+<div id="ticketHolders">
+
+<!-- JavaScript akan membuat
+Pemegang Tiket 2
+Pemegang Tiket 3
+Pemegang Tiket 4
+sesuai jumlah tiket -->
+
+</div>
+
+</div>
+
+</div>
+
+  <!-- =========================
+RINGKASAN PESANAN
+========================= -->
+
+<div class="card">
+
+<div class="summary">
+
+<div class="section-title">
+
+Ringkasan Pesanan
+
+</div>
+
+<div class="row">
+
+<span>Nama Event</span>
+
+<strong>KENANGAN FESTIVAL 2026</strong>
+
+</div>
+
+<div class="row">
+
+<span>Total Tiket</span>
+
+<strong id="summaryQty">0</strong>
+
+</div>
+
+<div class="row">
+
+<span>Subtotal</span>
+
+<strong id="summarySubtotal">
+
+Rp0
+
+</strong>
+
+</div>
+
+<hr>
+
+<div id="summaryItems">
+
+<!-- List tiket otomatis -->
+
+</div>
+
+<hr>
+
+<div class="row total">
+
+<span>Grand Total</span>
+
+<strong id="grandTotal">
+
+Rp0
+
+</strong>
+
+</div>
+
+<div class="agreement">
+
+<input
+type="checkbox"
+id="agree">
+
+<p>
+
+Saya menyatakan bahwa seluruh data yang saya isi adalah benar dan dapat dipertanggungjawabkan. Saya telah membaca, memahami, dan menyetujui seluruh syarat dan ketentuan pembelian tiket ETATIX serta bersedia mengikuti seluruh peraturan yang berlaku selama acara berlangsung.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<div class="footer">
+
+<div
+style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px;
+">
+
+<div>
+
+<div
+style="
+font-size:13px;
+color:#666;
+">
+
+Grand Total
+
+</div>
+
+<div
+id="footerTotal"
+style="
+font-size:24px;
+font-weight:700;
+color:#111;
+">
+
+Rp0
+
+</div>
+
+</div>
+
+</div>
+
+<button
+class="checkout"
+id="checkoutBtn"
+disabled>
+
+Lanjut Pembayaran
+
+</button>
+
+</div>
+
+<script>
+
+function rupiah(n){
+
+return "Rp"+Number(n).toLocaleString("id-ID");
+
+}
+
+const cart=
+JSON.parse(
+localStorage.getItem("etatix_cart")
+||'{"items":[],"totalQty":0,"totalPrice":0}'
+);
+
+document.getElementById("summaryQty").textContent=
+cart.totalQty;
+
+document.getElementById("summarySubtotal").textContent=
+rupiah(cart.totalPrice);
+
+document.getElementById("grandTotal").textContent=
+rupiah(cart.totalPrice);
+
+document.getElementById("footerTotal").textContent=
+rupiah(cart.totalPrice);
+
+const itemBox=
+document.getElementById("summaryItems");
+
+cart.items.forEach(item=>{
+
+itemBox.innerHTML+=`
+
+<div class="row">
+
+<span>
+
+${item.jenis}
+× ${item.jumlah}
+
+</span>
+
+<strong>
+
+${rupiah(item.harga*item.jumlah)}
+
+</strong>
+
+</div>
+
+`;
+
+});
+
+const holder=
+document.getElementById("ticketHolders");
+
+if(cart.totalQty>1){
+
+for(let i=2;i<=cart.totalQty;i++){
+
+holder.innerHTML+=`
+
+<div class="ticket-holder">
+
+<h4>
+
+Pemegang Tiket ${i}
+
+</h4>
+
+<label>
+
+Nama Lengkap
+<span class="required">*</span>
+
+</label>
+
+<input
+type="text"
+name="holderName${i}"
+placeholder="Masukkan nama pemegang tiket">
+
+<label>
+
+Jenis Tiket
+<span class="required">*</span>
+
+</label>
+
+<select
+name="holderType${i}">
+
+<option value="">
+
+Pilih Jenis Tiket
+
+</option>
+
+${cart.items.map(t=>`
+
+<option>
+
+${t.jenis}
+
+</option>
+
+`).join("")}
+
+</select>
+
+</div>
+
+`;
+
+}
+
+}else{
+
+holder.innerHTML=`
+
+<div
+style="
+color:#666;
+font-size:14px;
+">
+
+Pembeli merupakan pemegang tiket.
+
+</div>
+
+`;
+
+}
+
+const agree=
+document.getElementById("agree");
+
+const btn=
+document.getElementById("checkoutBtn");
+
+agree.addEventListener("change",function(){
+
+btn.disabled=!this.checked;
+
+});
+
+btn.addEventListener("click",function(){
+
+window.location.href="qris.html";
+
+});
+
+</script>
+
+</div>
+
+</body>
+</html>
