@@ -1,0 +1,2766 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KENANGAN FESTIVAL | Kembali Ke Mantan</title>
+
+<meta name="description" content="Kenangan Festival 2026 - Kembali Ke Mantan di Tennis Indoor GBK">
+
+<meta name="theme-color" content="#6d0d16">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+:root{
+
+--primary:#b11424;
+
+--gold:#ffcc48;
+
+--dark:#120304;
+
+--glass:rgba(255,255,255,.06);
+
+--border:rgba(255,255,255,.12);
+
+--white:#ffffff;
+
+--shadow:0 25px 60px rgba(0,0,0,.45);
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:var(--dark);
+
+color:#fff;
+
+overflow-x:hidden;
+
+}
+
+img{
+
+display:block;
+
+max-width:100%;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+ul{
+
+list-style:none;
+
+}
+
+section{
+
+padding:110px 8%;
+
+position:relative;
+
+}
+
+.container{
+
+max-width:1280px;
+
+margin:auto;
+
+}
+
+/* ==========================
+SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#160405;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(#b11424,#ffcc48);
+
+border-radius:100px;
+
+}
+
+/* ==========================
+BACKGROUND
+========================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(circle at top,#541019 0%,transparent 55%),
+
+linear-gradient(180deg,#180405,#090102);
+
+z-index:-5;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background-image:
+
+linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+
+linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+
+background-size:70px 70px;
+
+opacity:.15;
+
+z-index:-4;
+
+}
+
+/* ==========================
+PRELOADER
+========================== */
+
+#preloader{
+
+position:fixed;
+
+inset:0;
+
+background:#090203;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:.6s;
+
+}
+
+.loader{
+
+width:80px;
+
+height:80px;
+
+border-radius:50%;
+
+border:5px solid rgba(255,255,255,.08);
+
+border-top:5px solid var(--gold);
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+ }
+
+nav{
+
+position:fixed;
+
+top:25px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:min(1200px,92%);
+
+height:74px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 34px;
+
+border-radius:70px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(25px);
+
+-webkit-backdrop-filter:blur(25px);
+
+border:1px solid rgba(255,255,255,.12);
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.45),
+
+inset 0 1px rgba(255,255,255,.05);
+
+z-index:9999;
+
+transition:.4s;
+
+}
+
+nav.scrolled{
+
+top:12px;
+
+background:rgba(16,4,5,.92);
+
+border-color:rgba(255,204,72,.18);
+
+box-shadow:
+
+0 25px 70px rgba(0,0,0,.65);
+
+}
+
+.logo{
+
+font-family:"Cinzel",serif;
+
+font-size:28px;
+
+font-weight:800;
+
+letter-spacing:3px;
+
+color:#fff;
+
+}
+
+.logo span{
+
+color:var(--gold);
+
+}
+
+.menu{
+
+display:flex;
+
+align-items:center;
+
+gap:42px;
+
+}
+
+.menu a{
+
+position:relative;
+
+font-size:14px;
+
+font-weight:600;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+opacity:.85;
+
+transition:.35s;
+
+}
+
+.menu a:hover{
+
+color:var(--gold);
+
+opacity:1;
+
+}
+
+.menu a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-9px;
+
+width:0;
+
+height:2px;
+
+background:var(--gold);
+
+transition:.35s;
+
+}
+
+.menu a:hover::after{
+
+width:100%;
+
+}
+
+/* ==========================
+HERO
+========================== */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero-bg{
+
+position:absolute;
+
+inset:0;
+
+background:url("background.jpg") center center/cover no-repeat;
+
+transform:scale(1.08);
+
+animation:heroZoom 18s linear infinite alternate;
+
+z-index:-3;
+
+}
+
+@keyframes heroZoom{
+
+0%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1.18);
+
+}
+
+}
+
+.hero-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(to bottom,
+
+rgba(0,0,0,.15),
+
+rgba(0,0,0,.55),
+
+#140405);
+
+z-index:-2;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:900px;
+
+height:900px;
+
+top:-300px;
+
+right:-250px;
+
+background:radial-gradient(circle,#ffcc4830,transparent 70%);
+
+filter:blur(25px);
+
+z-index:-1;
+
+}
+
+.hero-content{
+
+max-width:760px;
+
+padding-top:80px;
+
+}
+
+.badge{
+
+display:inline-flex;
+
+align-items:center;
+
+padding:12px 22px;
+
+border-radius:40px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+font-size:13px;
+
+font-weight:600;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+margin-bottom:28px;
+
+}
+
+.hero h1{
+
+font-family:"Cinzel",serif;
+
+font-size:82px;
+
+line-height:1.05;
+
+margin-bottom:22px;
+
+text-shadow:0 15px 40px rgba(0,0,0,.45);
+
+}
+
+.hero h1 span{
+
+display:block;
+
+color:var(--gold);
+
+margin-top:8px;
+
+}
+
+.hero p{
+
+max-width:650px;
+
+font-size:18px;
+
+line-height:1.9;
+
+opacity:.88;
+
+margin-bottom:45px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+display:inline-flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:18px 42px;
+
+border-radius:60px;
+
+background:linear-gradient(135deg,#b11424,#ffcc48);
+
+font-weight:700;
+
+letter-spacing:1px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.45);
+
+transition:.35s;
+
+}
+
+.primary-btn:hover{
+
+transform:translateY(-6px);
+
+}
+
+.secondary-btn{
+
+display:inline-flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:18px 42px;
+
+border-radius:60px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+transition:.35s;
+
+}
+
+.secondary-btn:hover{
+
+background:rgba(255,255,255,.12);
+
+}
+
+/* ==========================
+COUNTDOWN
+========================== */
+
+.countdown{
+
+display:flex;
+
+gap:22px;
+
+flex-wrap:wrap;
+
+margin-top:55px;
+
+}
+
+.count-box{
+
+width:120px;
+
+height:120px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:26px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+box-shadow:var(--shadow);
+
+transition:.35s;
+
+}
+
+.count-box:hover{
+
+transform:translateY(-10px);
+
+border-color:var(--gold);
+
+}
+
+.count-box h2{
+
+font-size:44px;
+
+font-weight:800;
+
+color:var(--gold);
+
+line-height:1;
+
+}
+
+.count-box span{
+
+margin-top:10px;
+
+font-size:13px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+opacity:.8;
+
+}
+
+/* ==========================
+SECTION TITLE
+========================== */
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.section-title span{
+
+display:inline-block;
+
+margin-bottom:18px;
+
+font-size:13px;
+
+font-weight:700;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+color:var(--gold);
+
+}
+
+.section-title h2{
+
+font-family:"Cinzel",serif;
+
+font-size:54px;
+
+margin-bottom:18px;
+
+}
+
+.section-title p{
+
+max-width:700px;
+
+margin:auto;
+
+opacity:.82;
+
+line-height:1.9;
+
+}
+
+/* ==========================
+ABOUT
+========================== */
+
+.about-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:70px;
+
+align-items:center;
+
+}
+
+.about-image{
+
+overflow:hidden;
+
+border-radius:28px;
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:var(--shadow);
+
+}
+
+.about-image img{
+
+width:100%;
+
+transition:1s;
+
+}
+
+.about-image:hover img{
+
+transform:scale(1.08);
+
+}
+
+.about-text h3{
+
+font-family:"Cinzel",serif;
+
+font-size:42px;
+
+margin-bottom:22px;
+
+}
+
+.about-text p{
+
+line-height:1.9;
+
+opacity:.82;
+
+margin-bottom:20px;
+
+}
+
+.info-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:28px;
+
+margin-top:70px;
+
+}
+
+.info-card{
+
+padding:35px;
+
+border-radius:24px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+transition:.35s;
+
+}
+
+.info-card:hover{
+
+transform:translateY(-10px);
+
+border-color:var(--gold);
+
+}
+
+.info-card h3{
+
+font-size:20px;
+
+margin-bottom:14px;
+
+color:var(--gold);
+
+}
+
+.info-card p{
+
+opacity:.82;
+
+line-height:1.8;
+
+}
+
+/* ==========================
+TICKET
+========================== */
+
+.ticket-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+.ticket-card{
+
+overflow:hidden;
+
+border-radius:28px;
+
+background:linear-gradient(180deg,#441018,#220607);
+
+border:1px solid rgba(255,255,255,.10);
+
+box-shadow:var(--shadow);
+
+transition:.45s;
+
+}
+
+.ticket-card:hover{
+
+transform:translateY(-15px);
+
+}
+
+.ticket-head{
+
+padding:34px;
+
+background:linear-gradient(135deg,#b11424,#ffcc48);
+
+}
+
+.ticket-head h3{
+
+font-size:28px;
+
+margin-bottom:12px;
+
+}
+
+.ticket-price{
+
+font-size:48px;
+
+font-weight:800;
+
+}
+
+.ticket-body{
+
+padding:35px;
+
+}
+
+.ticket-body ul{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.ticket-body li{
+
+padding-left:22px;
+
+position:relative;
+
+opacity:.85;
+
+}
+
+.ticket-body li::before{
+
+content:"✓";
+
+position:absolute;
+
+left:0;
+
+color:var(--gold);
+
+font-weight:700;
+
+}
+
+.ticket-btn{
+
+display:block;
+
+margin-top:30px;
+
+padding:16px;
+
+text-align:center;
+
+border-radius:50px;
+
+background:#fff;
+
+color:#7a0f18;
+
+font-weight:700;
+
+transition:.35s;
+
+}
+
+.ticket-btn:hover{
+
+background:var(--gold);
+
+}
+
+.ticket-note{
+
+text-align:center;
+
+margin-top:40px;
+
+font-size:14px;
+
+opacity:0.8;
+
+line-height:1.8;
+
+}
+
+/* ==========================
+VENUE
+========================== */
+
+.venue{
+
+display:grid;
+
+grid-template-columns:1.1fr .9fr;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+.venue-image{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:var(--shadow);
+
+}
+
+.venue-image img{
+
+width:100%;
+
+transition:1s;
+
+}
+
+.venue-image:hover img{
+
+transform:scale(1.06);
+
+}
+
+.venue-text h3{
+
+font-family:"Cinzel",serif;
+
+font-size:42px;
+
+margin-bottom:22px;
+
+}
+
+.venue-text p{
+
+opacity:.82;
+
+line-height:1.9;
+
+margin-bottom:18px;
+
+}
+
+.venue-info{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:18px;
+
+margin-top:35px;
+
+}
+
+.venue-box{
+
+padding:22px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+}
+
+.venue-box h4{
+
+margin-bottom:8px;
+
+color:var(--gold);
+
+}
+
+/* ==========================
+PAYMENT
+========================== */
+
+.payment-box{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:45px;
+
+align-items:center;
+
+padding:40px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+box-shadow:var(--shadow);
+
+}
+
+.payment-image{
+
+overflow:hidden;
+
+border-radius:22px;
+
+}
+
+.payment-image img{
+
+width:100%;
+
+}
+
+.payment-content h3{
+
+font-family:"Cinzel",serif;
+
+font-size:38px;
+
+margin-bottom:18px;
+
+}
+
+.payment-content p{
+
+opacity:.82;
+
+line-height:1.9;
+
+margin-bottom:28px;
+
+}
+
+.payment-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.payment-list li{
+
+padding-left:20px;
+
+position:relative;
+
+opacity:.86;
+
+}
+
+.payment-list li::before{
+
+content:"✓";
+
+position:absolute;
+
+left:0;
+
+color:var(--gold);
+
+}
+
+.payment-warning{
+
+margin-top:25px;
+
+padding:15px;
+
+border-radius:12px;
+
+background:rgba(177, 20, 36, 0.3);
+
+border:1px solid rgba(255, 204, 72, 0.4);
+
+color:var(--gold);
+
+font-weight:600;
+
+text-align:center;
+
+font-size:14px;
+
+}
+
+/* ==========================
+GALLERY
+========================== */
+
+.gallery-grid{
+
+column-count:3;
+
+column-gap:20px;
+
+}
+
+.gallery-grid img{
+
+width:100%;
+
+margin-bottom:20px;
+
+border-radius:22px;
+
+cursor:pointer;
+
+transition:.45s;
+
+box-shadow:var(--shadow);
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.gallery-grid img:hover{
+
+transform:scale(1.03);
+
+}
+
+.lightbox{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.92);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.35s;
+
+z-index:99999;
+
+}
+
+.lightbox.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.lightbox img{
+
+max-width:90%;
+
+max-height:90%;
+
+border-radius:18px;
+
+}
+
+/* ==========================
+FAQ
+========================== */
+
+.faq{
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.faq-item{
+
+margin-bottom:18px;
+
+border-radius:22px;
+
+overflow:hidden;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+transition:.35s;
+
+}
+
+.faq-item:hover{
+
+border-color:rgba(255,204,72,.35);
+
+}
+
+.faq-question{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:24px 28px;
+
+cursor:pointer;
+
+font-size:18px;
+
+font-weight:600;
+
+}
+
+.faq-question span{
+
+font-size:28px;
+
+transition:.35s;
+
+color:var(--gold);
+
+}
+
+.faq-answer{
+
+max-height:0;
+
+overflow:hidden;
+
+transition:max-height .4s ease;
+
+padding:0 28px;
+
+}
+
+.faq-answer p{
+
+padding-bottom:24px;
+
+line-height:1.9;
+
+opacity:.82;
+
+}
+
+.faq-item.active .faq-answer{
+
+max-height:400px; /* Increased max height for longer answers */
+
+}
+
+.faq-item.active .faq-question span{
+
+transform:rotate(45deg);
+
+}
+
+/* ==========================
+FOOTER
+========================== */
+
+footer{
+
+padding:90px 8% 40px;
+
+background:#090203;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:2fr 1fr 1fr;
+
+gap:60px;
+
+margin-bottom:50px;
+
+}
+
+.footer-logo{
+
+font-family:"Cinzel",serif;
+
+font-size:34px;
+
+letter-spacing:3px;
+
+margin-bottom:20px;
+
+}
+
+.footer-logo span{
+
+color:var(--gold);
+
+}
+
+.footer-about{
+
+line-height:1.9;
+
+opacity:.82;
+
+}
+
+.footer-title{
+
+font-size:18px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+color:var(--gold);
+
+}
+
+.footer-links{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+}
+
+.footer-links a{
+
+opacity:.82;
+
+transition:.35s;
+
+}
+
+.footer-links a:hover{
+
+color:var(--gold);
+
+padding-left:8px;
+
+}
+
+.footer-bottom{
+
+margin-top:40px;
+
+padding-top:25px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+opacity:.7;
+
+}
+
+/* ==========================
+BACK TO TOP
+========================== */
+
+.top-btn{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:58px;
+
+height:58px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#b11424,#ffcc48);
+
+font-size:22px;
+
+cursor:pointer;
+
+box-shadow:0 20px 40px rgba(0,0,0,.4);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.35s;
+
+z-index:9999;
+
+}
+
+.top-btn.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.top-btn:hover{
+
+transform:translateY(-6px);
+
+}
+
+/* ==========================
+REVEAL ANIMATION
+========================== */
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(70px);
+
+transition:1s;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media(max-width:1100px){
+
+.about-grid,
+
+.venue,
+
+.payment-box{
+
+grid-template-columns:1fr;
+
+}
+
+.ticket-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.info-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+nav{
+
+width:94%;
+
+padding:0 24px;
+
+height:68px;
+
+}
+
+.menu{
+
+display:none;
+
+}
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+.section-title h2{
+
+font-size:38px;
+
+}
+
+.ticket-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.gallery-grid{
+
+column-count:1;
+
+}
+
+.count-box{
+
+width:95px;
+
+height:95px;
+
+}
+
+.count-box h2{
+
+font-size:32px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+section{
+
+padding:85px 20px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.primary-btn,
+
+.secondary-btn{
+
+width:100%;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ==========================
+PRELOADER
+========================== -->
+
+<div id="preloader">
+
+<div class="loader"></div>
+
+</div>
+
+<!-- ==========================
+BACK TO TOP
+========================== -->
+
+<div class="top-btn" id="topBtn">
+
+&#8593;
+
+</div>
+
+<!-- ==========================
+NAVBAR
+========================== -->
+
+<nav id="navbar">
+
+<a href="#" class="logo">
+
+KENANGAN<span>FEST</span>
+
+</a>
+
+<div class="menu">
+
+<a href="#home">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#ticket">Ticket</a>
+
+<a href="#venue">Venue</a>
+
+<a href="#gallery">Gallery</a>
+
+<a href="#faq">FAQ</a>
+
+</div>
+
+</nav>
+
+<!-- ==========================
+HERO
+========================== -->
+
+<section class="hero" id="home">
+
+<div class="hero-bg"></div>
+
+<div class="hero-overlay"></div>
+
+<div class="container">
+
+<div class="hero-content reveal">
+
+<div class="badge">
+
+7 NOVEMBER 2026 • TENNIS INDOOR GELORA BUNG KARNO
+
+</div>
+
+<h1>
+
+KENANGAN FESTIVAL
+
+<span>KEMBALI KE MANTAN</span>
+
+</h1>
+
+<p>
+
+Sebuah festival musik dengan konsep nostalgia,
+visual spektakuler,
+lighting megah,
+serta pengalaman konser modern yang dirancang
+untuk menjadi malam yang tidak terlupakan.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="tiket.html" class="primary-btn">
+
+BELI TIKET
+
+</a>
+
+<a href="#about" class="secondary-btn">
+
+LIHAT EVENT
+
+</a>
+
+</div>
+
+<div class="countdown">
+
+<div class="count-box">
+
+<h2 id="days">00</h2>
+
+<span>Hari</span>
+
+</div>
+
+<div class="count-box">
+
+<h2 id="hours">00</h2>
+
+<span>Jam</span>
+
+</div>
+
+<div class="count-box">
+
+<h2 id="minutes">00</h2>
+
+<span>Menit</span>
+
+</div>
+
+<div class="count-box">
+
+<h2 id="seconds">00</h2>
+
+<span>Detik</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+ABOUT
+========================== -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<span>ABOUT EVENT</span>
+
+<h2>
+
+Festival Musik Penuh Kenangan
+
+</h2>
+
+<p>
+
+Nikmati pertunjukan musik dengan tata panggung,
+audio,
+visual,
+serta pengalaman festival premium
+yang dirancang untuk seluruh pengunjung.
+
+</p>
+
+</div>
+
+<div class="about-grid">
+
+<div class="about-image reveal">
+
+<img src="poster.jpg" alt="Kenangan Festival">
+
+</div>
+
+<div class="about-text reveal">
+
+<h3>
+
+Kenangan Festival Kembali ke Mantan
+
+</h3>
+
+<p>
+
+Kenangan Festival adalah festival pertama dari Kopi Kenangan yang menyatukan kopi, musik, dan momen seru dalam satu perayaan.
+
+</p>
+
+<p>
+
+<strong>Line-up Artis:</strong><br>
+• Kerispatih feat. Samasy Simorangkir<br>
+• NAIK ITU<br>
+• More artists to be announced
+
+</p>
+
+</div>
+
+</div>
+
+<div class="info-grid">
+
+<div class="info-card reveal">
+
+<h3>Tanggal</h3>
+
+<p>
+
+07 November 2026
+
+</p>
+
+</div>
+
+<div class="info-card reveal">
+
+<h3>Lokasi</h3>
+
+<p>
+
+Tennis Indoor Gelora Bung Karno (GBK)
+
+</p>
+
+</div>
+
+<div class="info-card reveal">
+
+<h3>Waktu</h3>
+
+<p>
+
+Open Gate 15.00 WIB
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==========================
+TICKET
+========================== -->
+
+<section id="ticket">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<span>TICKET</span>
+
+<h2>
+
+Pilih Kategori Tiket
+
+</h2>
+
+<p>
+
+Pilih kategori tiket sesuai pengalaman festival yang Anda inginkan. Early Bird mulai dijual Sabtu, 4 Juli 2026 | 13.00 WIB.
+
+</p>
+
+</div>
+
+<div class="ticket-grid">
+
+<!-- TIKET 1 -->
+
+<div class="ticket-card reveal">
+
+<div class="ticket-head">
+
+<h3>TRIBUN KENANGAN MANIS</h3>
+
+<div class="ticket-price">
+
+Rp.150.000
+
+</div>
+
+</div>
+
+<div class="ticket-body">
+
+<ul>
+
+<li>1 Tiket berlaku untuk 1 Orang Pengunjung, Harga Tiket belum termasuk Pajak Daerah, Harga Tiket belum termasuk Admin Fee </li>
+
+
+
+</ul>
+
+<a href="tiket.html" class="ticket-btn">
+
+BELI SEKARANG
+
+</a>
+
+</div>
+
+</div>
+
+<!-- TIKET 2 -->
+
+<div class="ticket-card reveal">
+
+<div class="ticket-head">
+
+<h3>FESTIVAL KENANGAN MANTAN</h3>
+
+<div class="ticket-price">
+
+Rp.200.000
+
+</div>
+
+</div>
+
+<div class="ticket-body">
+
+<ul>
+
+<li>1 Tiket berlaku untuk 1 Orang Pengunjung, Harga Tiket belum termasuk Pajak Daerah, Harga Tiket belum termasuk Admin Fee</li>
+
+
+
+</ul>
+
+<a href="tiket.html" class="ticket-btn">
+
+BELI SEKARANG
+
+</a>
+
+</div>
+
+</div>
+
+<!-- TIKET 3 -->
+
+<div class="ticket-card reveal">
+
+<div class="ticket-head">
+
+<h3>TRIBUN KENANGAN TERBAIK</h3>
+
+<div class="ticket-price">
+
+Rp.350.000
+
+</div>
+
+</div>
+
+<div class="ticket-body">
+
+<ul>
+    
+<li>1 Tiket berlaku untuk 1 Orang Pengunjung, Harga Tiket belum termasuk Pajak Daerah, Harga Tiket belum termasuk Admin Fee</li>
+
+
+
+</ul>
+
+<a href="tiket.html" class="ticket-btn">
+
+BELI SEKARANG
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="ticket-note reveal">
+<p>* Harga belum termasuk pajak area dan biaya administrasi.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+VENUE
+========================== -->
+
+<section id="venue">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<span>VENUE PLAN</span>
+
+<h2>
+
+Layout Area Festival
+
+</h2>
+
+<p>
+
+Lihat denah area festival untuk memudahkan perjalanan Anda selama acara berlangsung.
+
+</p>
+
+</div>
+
+<div class="venue">
+
+<div class="venue-image reveal">
+
+<img src="stage.jpg" alt="Venue Plan 360 Stage">
+
+</div>
+
+<div class="venue-text reveal">
+
+<h3>
+
+Venue Festival Modern
+
+</h3>
+
+<p>
+
+Area festival dirancang dengan konsep panggung 360° Stage yang megah, agar seluruh pengunjung mendapatkan pengalaman terbaik dari berbagai sisi panggung.
+
+</p>
+
+<p>
+
+Tersedia area Regular, VIP, VVIP, Food Court, Toilet, Musholla, Medical Center, Merchandise Booth, serta Emergency Exit.
+
+</p>
+
+<div class="venue-info">
+
+<div class="venue-box">
+
+<h4>Open Gate</h4>
+
+<p>15.00 WIB</p>
+
+</div>
+
+<div class="venue-box">
+
+<h4>Main Show</h4>
+
+<p>19.00 WIB</p>
+
+</div>
+
+<div class="venue-box">
+
+<h4>Parking</h4>
+
+<p>Motor & Mobil</p>
+
+</div>
+
+<div class="venue-box">
+
+<h4>Security</h4>
+
+<p>24 Jam</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+PAYMENT
+========================== -->
+
+<section id="payment">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<span>PAYMENT</span>
+
+<h2>
+
+Metode Pembayaran
+
+</h2>
+
+<p>
+
+Lakukan pembayaran menggunakan berbagai metode yang tersedia. Pembelian resmi hanya melalui website ini.
+
+</p>
+
+</div>
+
+<div class="payment-box">
+
+<div class="payment-image reveal">
+
+<img src="metode.jpg" alt="Payment QRIS & Metode Lainnya">
+
+</div>
+
+<div class="payment-content reveal">
+
+<h3>
+
+Pembayaran Mudah & Aman
+
+</h3>
+
+<p>
+
+Setelah melakukan pembayaran, simpan bukti transaksi kemudian lanjutkan proses konfirmasi pada halaman pembelian tiket.
+
+</p>
+
+<ul class="payment-list">
+
+<li>QRIS (Semua E-Wallet)</li>
+
+<li>Virtual Account (Mandiri, BJB, dll)</li>
+
+<li>E-Wallet (OVO, LinkAja!)</li>
+
+<li>Paylater (Redivo)</li>
+
+<li>Credit Card (Visa, Mastercard, dll)</li>
+
+</ul>
+
+<div class="payment-warning">
+
+⚠ Batas Waktu Pembayaran adalah 10 MENIT
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+GALLERY
+========================== -->
+
+<section id="gallery">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<span>GALLERY</span>
+
+<h2>
+
+Kenangan Festival Preview
+
+</h2>
+
+<p>
+
+Beberapa preview official yang telah dipublikasikan.
+
+</p>
+
+</div>
+
+<div class="gallery-grid">
+
+<img src="1.jpg" alt="Gallery">
+
+<img src="2.jpg" alt="Gallery">
+
+<img src="3.jpg" alt="Gallery">
+
+<img src="4.jpg" alt="Gallery">
+
+<img src="5.jpg" alt="Gallery">
+
+<img src="6.jpg" alt="Gallery">
+
+<img src="7.jpg" alt="Gallery">
+
+<img src="8.jpg" alt="Gallery">
+
+<img src="9.jpg" alt="Gallery">
+
+</div>
+
+</div>
+
+</section>
+
+<div class="lightbox" id="lightbox">
+
+<img id="lightboxImage" src="" alt="Preview">
+
+</div>
+
+<!-- ==========================
+FAQ
+========================== -->
+
+<section id="faq">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<span>FAQ</span>
+
+<h2>
+
+Frequently Asked Questions
+
+</h2>
+
+<p>
+
+Informasi yang paling sering ditanyakan oleh pengunjung festival.
+
+</p>
+
+</div>
+
+<div class="faq">
+
+<div class="faq-item">
+
+<div class="faq-question">
+
+Apakah tiket bisa direfund?
+
+<span>+</span>
+
+</div>
+
+<div class="faq-answer">
+
+<p>
+
+Seluruh pembelian tiket bersifat final dan tidak dapat dikembalikan ataupun ditukar.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">
+
+Apa Syarat & Ketentuan pembelian tiket?
+
+<span>+</span>
+
+</div>
+
+<div class="faq-answer">
+
+<p>
+
+- Pembelian resmi HANYA melalui website www.kenanganfestival.com.<br>
+- 1 transaksi maksimal pembelian 5 tiket per kategori.<br>
+- 1 orang dapat melakukan beberapa kali transaksi pembelian.<br>
+- Harga tiket belum termasuk pajak area dan biaya administrasi.<br>
+- Penyelenggara tidak bertanggung jawab atas tiket yang dibeli di luar website resmi.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">
+
+Kapan Open Gate dimulai?
+
+<span>+</span>
+
+</div>
+
+<div class="faq-answer">
+
+<p>
+
+Open Gate dimulai pukul 15.00 WIB. Disarankan hadir lebih awal untuk menghindari antrean.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">
+
+Apakah tersedia area parkir?
+
+<span>+</span>
+
+</div>
+
+<div class="faq-answer">
+
+<p>
+
+Ya. Area parkir motor dan mobil tersedia di sekitar area Tennis Indoor Gelora Bung Karno (GBK).
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">
+
+Bagaimana cara masuk ke venue?
+
+<span>+</span>
+
+</div>
+
+<div class="faq-answer">
+
+<p>
+
+Cukup tunjukkan e-ticket yang telah diterima kepada petugas untuk dilakukan proses scan QR.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+FOOTER
+========================== -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<div class="footer-logo">
+
+KENANGAN<span>FEST</span>
+
+</div>
+
+<p class="footer-about">
+
+Festival musik yang menghadirkan nostalgia,
+pengalaman konser modern,
+visual spektakuler,
+dan momen yang akan selalu dikenang.
+
+</p>
+
+</div>
+
+<div>
+
+<h3 class="footer-title">
+
+Navigation
+
+</h3>
+
+<div class="footer-links">
+
+<a href="#home">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#ticket">Ticket</a>
+
+<a href="#venue">Venue</a>
+
+<a href="#gallery">Gallery</a>
+
+<a href="#faq">FAQ</a>
+
+</div>
+
+</div>
+
+<div>
+
+<h3 class="footer-title">
+
+Event Info
+
+</h3>
+
+<div class="footer-links">
+
+<a href="#">7 November 2026</a>
+
+<a href="#">Tennis Indoor GBK</a>
+
+<a href="#">Jakarta</a>
+
+<a href="tiket.html">Beli Tiket</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 KENANGAN FESTIVAL.
+All Rights Reserved.
+
+</p>
+
+<p>
+
+Designed with ❤️
+
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+<script>
+
+/* ==========================
+PRELOADER
+========================== */
+
+window.addEventListener("load",()=>{
+
+const loader=document.getElementById("preloader");
+
+loader.style.opacity="0";
+
+setTimeout(()=>{
+
+loader.style.display="none";
+
+},600);
+
+});
+
+/* ==========================
+NAVBAR
+========================== */
+
+const navbar=document.getElementById("navbar");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>80){
+
+navbar.classList.add("scrolled");
+
+}else{
+
+navbar.classList.remove("scrolled");
+
+}
+
+});
+
+/* ==========================
+BACK TO TOP
+========================== */
+
+const topBtn=document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>500){
+
+topBtn.classList.add("show");
+
+}else{
+
+topBtn.classList.remove("show");
+
+}
+
+});
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+/* ==========================
+COUNTDOWN
+========================== */
+
+const targetDate=new Date("November 7, 2026 19:00:00").getTime();
+
+setInterval(()=>{
+
+const now=new Date().getTime();
+
+const distance=targetDate-now;
+
+const days=Math.floor(distance/(1000*60*60*24));
+
+const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+const minutes=Math.floor((distance%(1000*60*60))/60000);
+
+const seconds=Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerHTML=days<10?"0"+days:days;
+
+document.getElementById("hours").innerHTML=hours<10?"0"+hours:hours;
+
+document.getElementById("minutes").innerHTML=minutes<10?"0"+minutes:minutes;
+
+document.getElementById("seconds").innerHTML=seconds<10?"0"+seconds:seconds;
+
+},1000);
+
+/* ==========================
+FAQ ACCORDION
+========================== */
+
+document.querySelectorAll(".faq-item").forEach(item=>{
+
+item.querySelector(".faq-question").onclick=()=>{
+
+item.classList.toggle("active");
+
+};
+
+});
+
+/* ==========================
+LIGHTBOX
+========================== */
+
+const lightbox=document.getElementById("lightbox");
+
+const lightboxImage=document.getElementById("lightboxImage");
+
+document.querySelectorAll(".gallery-grid img").forEach(image=>{
+
+image.onclick=()=>{
+
+lightbox.classList.add("active");
+
+lightboxImage.src=image.src;
+
+};
+
+});
+
+lightbox.onclick=()=>{
+
+lightbox.classList.remove("active");
+
+};
+
+/* ==========================
+REVEAL ON SCROLL
+========================== */
+
+const revealElements=document.querySelectorAll(".reveal");
+
+function reveal(){
+
+revealElements.forEach(el=>{
+
+const top=el.getBoundingClientRect().top;
+
+const visible=window.innerHeight-120;
+
+if(top<visible){
+
+el.classList.add("active");
+
+}
+
+});
+
+}
+
+window.addEventListener("scroll",reveal);
+
+reveal();
+
+/* ==========================
+PARALLAX HERO
+========================== */
+
+window.addEventListener("scroll",()=>{
+
+const bg=document.querySelector(".hero-bg");
+
+bg.style.transform="scale(1.08) translateY("+(window.scrollY*0.25)+"px)";
+
+});
+
+</script>
+
+</body>
+
+</html>f
